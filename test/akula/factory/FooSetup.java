@@ -1,9 +1,9 @@
-package factory;
+package akula.factory;
 
 import domain.Bar;
 import domain.Foo;
 
-@Setup(Foo.class)
+@Factory(Foo.class)
 @Persistent(databaseName = "factory-persistence-test")
 class FooSetup {
 
@@ -16,7 +16,7 @@ class FooSetup {
     }
 }
 
-@Setup(Bar.class)
+@Factory(Bar.class)
 @Persistent(databaseName = "factory-persistence-test")
 class BarSetup {
 

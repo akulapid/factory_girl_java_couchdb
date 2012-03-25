@@ -1,12 +1,13 @@
 package domain;
 
-import factory.Factory;
 import org.junit.Test;
+
+import static akula.factory.Factories.newFoo;
 
 public class FactoryPersistenceTest {
 
     @Test
     public void shouldPersistFooInCouchdb() {
-        Factory.newFoo().fu(25).create();
+        newFoo().setFu(25).create();
     }
 }

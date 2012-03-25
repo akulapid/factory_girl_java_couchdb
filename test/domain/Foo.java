@@ -7,6 +7,7 @@ import org.ektorp.support.TypeDiscriminator;
 public class Foo extends CouchDbDocument {
 
     @TypeDiscriminator
+    @JsonProperty
     String type = "Foo";
 
     @JsonProperty

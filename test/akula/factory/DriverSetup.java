@@ -1,10 +1,10 @@
-package factory;
+package akula.factory;
 
 import domain.Driver;
 import domain.License;
 import domain.Tag;
 
-@Setup(Driver.class)
+@Factory(Driver.class)
 @Persistent(databaseName = "factory-persistence-test")
 class DriverSetup {
 
@@ -12,31 +12,29 @@ class DriverSetup {
         return "Schumacher";
     }
 
-    @Associate
-    public String dlNumber(License license) {
-        return license.getDlNumber();
+    public String licenseId(License license) {
+        return license.getId();
     }
 }
 
-@Setup(License.class)
+@Factory(License.class)
 @Persistent(databaseName = "factory-persistence-test")
 class LicenseSetup {
 
-    public String dlNumber() {
-        return "333";
+    public String id() {
+        return "license_id";
     }
 
     public String country() {
         return "Germany";
     }
 
-    @Associate
     public String tagId(Tag tag) {
         return tag.getId();
     }
 }
 
-@Setup(Tag.class)
+@Factory(Tag.class)
 @Persistent(databaseName = "factory-persistence-test")
 class TagSetup {
 
